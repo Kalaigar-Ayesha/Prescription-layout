@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prescription</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="prescription">
+    <header>
+        <h1>Dr. John Doe</h1>
+        <p>MBBS, MD - General Medicine</p>
+        <p>City Hospital, New York</p>
+        <hr>
+    </header>
+
+    <section class="patient-info">
+        <div class="info-line">
+            <div class="info-item">
+                <label for="patient-name">Patient Name:</label>
+                <input type="text" id="patient-name" placeholder="Enter Patient Name" value="Jane Smith">
+            </div>
+    
+            <div class="info-item">
+                <label for="age">Age:</label>
+                <input type="number" id="age" placeholder="Age" value="32" min="0">
+            </div>
+    
+            <div class="info-item">
+                <label for="gender">Gender:</label>
+                <select id="gender">
+                    <option value="Female" selected>Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+    
+            <div class="info-item">
+                <label for="date">Date:</label>
+                <input type="date" id="date" value="2025-04-27">
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="prescription-body">
+        <h2>Prescription:</h2>
+
+        <div class="medicine-block">
+            <label for="medicine-select">Select Medicine:</label>
+            <select id="medicine-select">
+                <option value="">-- Select Medicine --</option>
+                <option value="Paracetamol 500mg">Paracetamol 500mg</option>
+                <option value="Vitamin C 1000mg">Vitamin C 1000mg</option>
+                <option value="Amoxicillin 250mg">Amoxicillin 250mg</option>
+                <option value="Cough Syrup 100ml">Cough Syrup 100ml</option>
+                <option value="Ibuprofen 400mg">Ibuprofen 400mg</option>
+            </select>
+
+            <input type="text" id="new-medicine" placeholder="Or enter new medicine name">
+            
+            <div class="timing-options">
+                <label><input type="checkbox" value="Morning"> Morning</label>
+                <label><input type="checkbox" value="Afternoon"> Afternoon</label>
+                <label><input type="checkbox" value="Evening"> Evening</label>
+                <label><input type="checkbox" value="Night"> Night</label>
+            </div>
+
+            <button type="button" onclick="addMedicine()">Add Medicine</button>
+        </div>
+
+        <ul id="prescription-list">
+            <!-- Medicines will be added here dynamically -->
+        </ul>
+
+        <div class="extra-notes">
+            <h3>Doctor's Notes:</h3>
+            <textarea placeholder="Write any additional instructions..." rows="4"></textarea>
+        </div>
+
+    </section>
+
+    <footer>
+        <hr>
+        <p>Signature:</p>
+        <!-- <img src="https://i.ibb.co/2F4QdYZ/sample-signature.png" alt="Doctor Signature" class="signature-img"> -->
+    </footer>
+</div>
+
+<div class="button-container">
+    <button onclick="window.print()">Download / Print Prescription</button>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
